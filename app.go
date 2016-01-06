@@ -18,6 +18,7 @@ var Meta = &app.Meta{
 	},
 	Detectors: []*detect.Detector{
 		&detect.Detector{
+			Type: "example",
 			File: []string{"otto.example"},
 		},
 	},
