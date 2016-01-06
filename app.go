@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/hashicorp/otto/app"
 	"github.com/hashicorp/otto/appfile/detect"
+	"github.com/hashicorp/otto/appfile"
 )
 
 // AppFactory implements plugin.AppFunc for use to serve the plugin.
@@ -32,6 +33,10 @@ type App struct{}
 
 func (a *App) Meta() (*app.Meta, error) {
 	return Meta, nil
+}
+
+func (a *App) Implicit(ctx *app.Context) (*appfile.File, error) {
+	return nil, nil
 }
 
 func (a *App) Compile(ctx *app.Context) (*app.CompileResult, error) {
